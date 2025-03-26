@@ -1,19 +1,20 @@
 using System;
+using TheatricalPlayersRefactoringKata.Interfaces;
 
 namespace TheatricalPlayersRefactoringKata;
 
 public class HistoryPlay : Play
 {
-    private readonly ComedyPlay _comedyPlay;
-    private readonly TragedyPlay _tragedyPlay;
+    private readonly IPlayAmountCalculator _comedyPlay;
+    private readonly IPlayAmountCalculator _tragedyPlay;
 
-    public ComedyPlay ComedyPlay { get => _comedyPlay; }
-    public TragedyPlay TragedyPlay { get => _tragedyPlay; }
+    public IPlayAmountCalculator ComedyPlay { get => _comedyPlay; }
+    public IPlayAmountCalculator TragedyPlay { get => _tragedyPlay; }
 
-    public HistoryPlay(string name, int lines, string type) : base(name, lines, type)
+    public HistoryPlay(string name, int lines, string type, IPlayAmountCalculator comedyPlay, IPlayAmountCalculator tragedyPlay) : base(name, lines, type)
     {
-        _comedyPlay = new ComedyPlay(name, lines, type);
-        _tragedyPlay = new TragedyPlay(name, lines, type);
+        _comedyPlay = comedyPlay;
+        _tragedyPlay = tragedyPlay;
         BaseAmount *= 2;
     }
 

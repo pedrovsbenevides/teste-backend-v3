@@ -44,9 +44,9 @@ public class StatementPrinterTests
             { "hamlet", new TragedyPlay("Hamlet", 4024, "tragedy") },
             { "as-like", new ComedyPlay("As You Like It", 2670, "comedy") },
             { "othello", new TragedyPlay("Othello", 3560, "tragedy") },
-            { "henry-v", new HistoryPlay("Henry V", 3227, "history") },
-            { "john", new HistoryPlay("King John", 2648, "history") },
-            { "richard-iii", new HistoryPlay("Richard III", 3718, "history") }
+            { "henry-v", new HistoryPlay("Henry V", 3227, "history", new ComedyPlay("Henry V", 3227, "history"), new TragedyPlay("Henry V", 3227, "history")) },
+            { "john", new HistoryPlay("King John", 2648, "history", new ComedyPlay("King John", 2648, "history"), new TragedyPlay("King John", 2648, "history")) },
+            { "richard-iii", new HistoryPlay("Richard III", 3718, "history", new ComedyPlay("Richard III", 3718, "history"), new TragedyPlay("Richard III", 3718, "history")) }
         };
 
         Invoice invoice = new Invoice(

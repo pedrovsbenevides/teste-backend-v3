@@ -1,6 +1,8 @@
+using TheatricalPlayersRefactoringKata.Interfaces;
+
 namespace TheatricalPlayersRefactoringKata;
 
-public abstract class Play
+public abstract class Play : IPlayAmountCalculator
 {
     private string _name;
     private int _lines;
