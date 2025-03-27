@@ -29,7 +29,7 @@ public class StatementPrinterTests
             }
         );
 
-        StatementPrinter statementPrinter = new StatementPrinter();
+        StatementPrinter statementPrinter = new StatementPrinter(new TextStatementFormatter());
         var result = statementPrinter.Print(invoice, plays);
 
         Approvals.Verify(result);
@@ -62,7 +62,7 @@ public class StatementPrinterTests
             }
         );
 
-        StatementPrinter statementPrinter = new StatementPrinter();
+        StatementPrinter statementPrinter = new StatementPrinter(new TextStatementFormatter());
         var result = statementPrinter.Print(invoice, plays);
 
         Approvals.Verify(result);
